@@ -116,7 +116,7 @@ class UploadHelper {
                 }
             } else {
                 if(is_array($_FILES[$this->inputName]["name"])) {
-                    $this->uploadErrors[] = UploadErrors::UPLOAD_ERR_NO_MULTIPLE;
+                    $this->uploadErrors[] = UploadErrors::UPLOAD_ERR_MULTIPLE;
                     $this->uploadSuccessful = false;
                 } else {
                     $file = $_FILES[$this->inputName];

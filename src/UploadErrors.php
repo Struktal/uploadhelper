@@ -6,7 +6,7 @@ enum UploadErrors {
     case UPLOAD_ERR_NOT_UPLOADED;
     case UPLOAD_ERR_TYPE;
     case UPLOAD_ERR_SIZE;
-    case UPLOAD_ERR_NO_MULTIPLE;
+    case UPLOAD_ERR_MULTIPLE;
 
     /**
      * Get the Upload Error Code
@@ -17,7 +17,7 @@ enum UploadErrors {
             self::UPLOAD_ERR_NOT_UPLOADED => 0,
             self::UPLOAD_ERR_TYPE => 1,
             self::UPLOAD_ERR_SIZE => 2,
-            self::UPLOAD_ERR_NO_MULTIPLE => 3
+            self::UPLOAD_ERR_MULTIPLE => 3
         };
     }
 }
