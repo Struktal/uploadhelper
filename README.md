@@ -1,4 +1,4 @@
-# PHP-UploadHelper
+# UploadHelper for PHP
 This is a helper library for PHP that helps to process uploaded files.
 
 PHP stores uploaded files in the `$_FILES` array. However, this array is not very trivial to use for multiple file uploads. This library provides an easy way to check whether a file upload should be allowed and to get the files in a more convenient way.
@@ -8,7 +8,7 @@ To install this library, include it in your project using composer:
 ```json
 {
     "require": {
-        "jensostertag/php-uploadhelper": "dev-main"
+        "jensostertag/uploadhelper": "1.0.0"
     }
 }
 ```
