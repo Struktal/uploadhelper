@@ -8,7 +8,7 @@ To install this library, include it in your project using composer:
 ```json
 {
     "require": {
-        "jensostertag/uploadhelper": "1.0.0"
+        "struktal/uploadhelper": "1.0.0"
     }
 }
 ```
@@ -45,7 +45,7 @@ if(!($uploadHelper->successful())) {
 }
 
 // Get the uploaded File
-$uploadedFile = $uploadHelper->getUploadedFiles();
+$uploadedFile = $uploadHelper->getFiles();
 ```
 
 If the file upload was successful, the `$uploadedFile` will be an array with the following structure:
@@ -93,7 +93,7 @@ if(!($uploadHelper->successful())) {
 }
 
 // Get the uploaded Files
-$uploadedFiles = $uploadHelper->getUploadedFiles();
+$uploadedFiles = $uploadHelper->getFiles();
 ```
 
 If the file upload was successful, the `$uploadedFiles` will be an array with the following structure:

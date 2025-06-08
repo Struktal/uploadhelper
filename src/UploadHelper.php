@@ -1,6 +1,6 @@
 <?php
 
-namespace jensostertag\UploadHelper;
+namespace struktal\UploadHelper;
 
 class UploadHelper {
     private string $inputName = "file";
