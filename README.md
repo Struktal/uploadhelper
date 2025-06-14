@@ -1,16 +1,12 @@
-# UploadHelper for PHP
+# File Upload Handler for PHP
 This is a helper library for PHP that helps to process uploaded files.
 
 PHP stores uploaded files in the `$_FILES` array. However, this array is not very trivial to use for multiple file uploads. This library provides an easy way to check whether a file upload should be allowed and to get the files in a more convenient way.
 
 ## Installation
 To install this library, include it in your project using composer:
-```json
-{
-    "require": {
-        "struktal/uploadhelper": "1.0.0"
-    }
-}
+```shell
+composer require struktal/struktal-file-uploads
 ```
 
 ## Usage
@@ -27,25 +23,25 @@ Let's assume you have a form with a file input named `fileInputName`:
 </form>
 ```
 
-In your PHP script that is called when the form is submitted, use the `UploadHelper` class to check whether the file upload should be allowed and to get the uploaded files:
+In your PHP script that is called when the form is submitted, use the `FileUpload` class to check whether the file upload should be allowed and to get the uploaded files:
 ```php
-$uploadHelper = new UploadHelper();
+$fileUpload = new FileUpload();
 
 // File Upload Options
-$uploadHelper->setInputName("fileInputName") // Set the Name of the File Input
+$fileUpload->setInputName("fileInputName") // Set the Name of the File Input
              ->setMultiple(false) // Only allow a single File
              ->setAllowedMimeTypes(["image/jpeg", "image/png"]) // Only allow JPEG and PNG Files
              ->setMaxSize(2) // Only allow Files up to 2 MiB
              ->handleUploadedFiles();
 
 // Check if there were Errors during the Upload
-if(!($uploadHelper->successful())) {
-    $errors = $uploadHelper->getErrors();
+if(!($fileUpload->successful())) {
+    $errors = $fileUpload->getErrors();
     return;
 }
 
 // Get the uploaded File
-$uploadedFile = $uploadHelper->getFiles();
+$uploadedFile = $fileUpload->getFiles();
 ```
 
 If the file upload was successful, the `$uploadedFile` will be an array with the following structure:
@@ -75,25 +71,25 @@ Let's assume you have a form with a file input named `fileInputName`, with the `
 </form>
 ```
 
-In your PHP script that is called when the form is submitted, use the `UploadHelper` class to check whether the file upload should be allowed and to get the uploaded files:
+In your PHP script that is called when the form is submitted, use the `FileUpload` class to check whether the file upload should be allowed and to get the uploaded files:
 ```php
-$uploadHelper = new UploadHelper();
+$fileUpload = new FileUpload();
 
 // File Upload Options
-$uploadHelper->setInputName("fileInputName") // Set the Name of the File Input
+$fileUpload->setInputName("fileInputName") // Set the Name of the File Input
              ->setMultiple(true) // Allow multiple Files
              ->setAllowedMimeTypes(["image/jpeg", "image/png"]) // Only allow JPEG and PNG Files
              ->setMaxSize(2) // Only allow Files up to 2 MiB
              ->handleUploadedFiles();
 
 // Check if there were Errors during the Upload
-if(!($uploadHelper->successful())) {
-    $errors = $uploadHelper->getErrors();
+if(!($fileUpload->successful())) {
+    $errors = $fileUpload->getErrors();
     return;
 }
 
 // Get the uploaded Files
-$uploadedFiles = $uploadHelper->getFiles();
+$uploadedFiles = $fileUpload->getFiles();
 ```
 
 If the file upload was successful, the `$uploadedFiles` will be an array with the following structure:

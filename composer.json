@@ -1,5 +1,5 @@
 {
-  "name": "struktal/uploadhelper",
+  "name": "struktal/struktal-file-uploads",
   "description": "A PHP library to process uploaded files",
   "keywords": [
     "upload",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "struktal\\UploadHelper\\": "src/"
+      "struktal\\FileUpload\\": "src/"
     }
   },
   "require": {

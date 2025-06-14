@@ -1,6 +1,6 @@
 <?php
 
-namespace struktal\UploadHelper;
+namespace struktal\FileUpload;
 
 enum UploadErrors {
     case UPLOAD_ERR_NOT_UPLOADED;

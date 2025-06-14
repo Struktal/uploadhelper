@@ -1,8 +1,8 @@
 <?php
 
-namespace struktal\UploadHelper;
+namespace struktal\FileUpload;
 
-class UploadHelper {
+class FileUpload {
     private string $inputName = "file";
     private bool $multiple = false;
     private array $allowedMimeTypes = [];
@@ -16,7 +16,7 @@ class UploadHelper {
      * @param string $inputName Name of the HTML File Input Element
      * @return $this Self
      */
-    public function setInputName(string $inputName): UploadHelper {
+    public function setInputName(string $inputName): FileUpload {
         $this->inputName = $inputName;
         return $this;
     }
@@ -26,7 +26,7 @@ class UploadHelper {
      * @param bool $multiple Upload of multiple Files allowed
      * @return $this Self
      */
-    public function setMultiple(bool $multiple): UploadHelper {
+    public function setMultiple(bool $multiple): FileUpload {
         $this->multiple = $multiple;
         return $this;
     }
@@ -36,7 +36,7 @@ class UploadHelper {
      * @param array $allowedMimeTypes Allowed MIME Types
      * @return $this Self
      */
-    public function setAllowedMimeTypes(array $allowedMimeTypes): UploadHelper {
+    public function setAllowedMimeTypes(array $allowedMimeTypes): FileUpload {
         $this->allowedMimeTypes = $allowedMimeTypes;
         return $this;
     }
@@ -46,7 +46,7 @@ class UploadHelper {
      * @param int|null $maxSize Maximum allowed File Size (MiB)
      * @return $this Self
      */
-    public function setMaxSize(?int $maxSize): UploadHelper {
+    public function setMaxSize(?int $maxSize): FileUpload {
         if($maxSize !== null) {
             $this->maxSize = $maxSize * 1024 * 1024;
         } else {
@@ -84,7 +84,7 @@ class UploadHelper {
      * Handle the uploaded Files
      * @return $this
      */
-    public function handleUploadedFiles(): UploadHelper {
+    public function handleUploadedFiles(): FileUpload {
         if(isset($_FILES[$this->inputName])) {
             $this->uploadSuccessful = true;
 
